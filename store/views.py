@@ -34,7 +34,6 @@ from .forms import CustomerProfileForm
 from django.db import transaction
 
 
-print("STRIPE KEY USED:", settings.STRIPE_SECRET_KEY)
 
 
 

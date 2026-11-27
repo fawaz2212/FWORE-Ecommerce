@@ -1,0 +1,190 @@
+[
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Mobiles",
+    "slug": "mobiles"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Electronics",
+    "slug": "electronics"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Fashion",
+    "slug": "fashion"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Accessories",
+    "slug": "accessories"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "category": 3,
+    "name": "T - shirt",
+    "description": "Orange t-shirts are vibrant and energetic pieces of clothing that add a bold pop to your wardrobe. They are known for their bold and refreshing vibe, making them a stylish choice for various occasions.",
+    "price": "499.00",
+    "image": "products/istockphoto-922855190-612x612.jpg",
+    "available": true,
+    "created_at": "2026-01-15T04:51:39.941Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "category": 4,
+    "name": "Casio",
+    "description": "Casio watches, particularly the blue dial models, are known for their refined designs and multifunctional features.The Edifice series offers a variety of styles, including leather and metal straps, with options for world time and multiple alarms. The Men's Smart Chronograph model features a bold blue dial and Bluetooth connectivity, making it suitable for both style and functionality.",
+    "price": "2599.00",
+    "image": "products/61p1zkm9sxL._SX522_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T04:54:18.278Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "category": 4,
+    "name": "Fossil Analog",
+    "description": "Fossil watches are known for their stylish and functional designs. They offer a range of analog watches with various features and materials. Here are some key points about Fossil Analog watches\r\nDesign: Fossil watches feature round dials with mineral glass, quartz movements, and often come with a stainless steel case and bracelet. Some models may have blue dials or multifunctional displays.",
+    "price": "11999.00",
+    "image": "products/71QoSMBhfVL._SX679_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T04:56:36.467Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "Apple iphone 15(128 GB)",
+    "description": "DYNAMIC ISLAND COMES TO IPHONE 15 — Dynamic Island bubbles up alerts and Live Activities — so you don’t miss them while you’re doing something else. You can see who’s calling, track your next ride, check your flight status, and so much more.INNOVATIVE DESIGN — iPhone 15 features a durable color-infused glass and aluminum design. It’s splash, water, and dust resistant. The Ceramic Shield front is tougher than any smartphone glass. And the 6.1\" Super Retina XDR display is up to 2x brighter in the sun compared to iPhone 14.",
+    "price": "40000.00",
+    "image": "products/71d7rfSl0wL._SX679_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T04:58:45.488Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "iphone 17 Pro (256 GB)",
+    "description": "UNIBODY DESIGN. FOR EXCEPTIONAL POWER — Heat-forged aluminium unibody enclosure for the most powerful iPhone ever made.DURABLE CERAMIC SHIELD. FRONT AND BACK — Ceramic Shield protects the back of iPhone 17 Pro Max, making it 4x more resistant to cracks. And the new Ceramic Shield 2 on the front has 3x better scratch resistance.THE ULTIMATE PRO CAMERA SYSTEM — With all 48MP rear cameras and 8x optical-quality zoom — the longest zoom ever on an iPhone. It’s the equivalent of 8 pro lenses in your pocket.18MP CENTER STAGE FRONT CAMERA — Flexible ways to frame your shot. Smarter group selfies, Dual Capture video for simultaneous front and rear recording, and more.",
+    "price": "134000.00",
+    "image": "products/iphone.jpg",
+    "available": true,
+    "created_at": "2026-01-15T05:01:10.493Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "name": "Wild Stone Perfume",
+    "description": "Item Weight: 100 ml; Scent Type: Aromatic Fougere\r\nLong lasting fragrance and?suitable?for casual wear\r\nOlfactory Group or Fragrance Note: Citrus freshness with a spicy herbal base as lemon combines with lavender, basil, and rosemary, accentuated by the sharp bite of cardamom, fresh coriander, and juniper, underscored by earthy notes of amber, patchouli, and moss\r\nWhile this strong fragrance works best as party wear but can also complement other occasions- formal or casual.",
+    "price": "500.00",
+    "image": "products/51qiWWVggL._SX522_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T05:20:39.005Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "category": 3,
+    "name": "Shoe Addidas",
+    "description": "Material type: Synthetics\r\nClosure type: Lace-Up\r\nHeel type: No Heel\r\nWater resistance level: Not Water Resistant\r\nSole material: Rubber\r\nStyle: Low-Top\r\nCountry of OriginIndia",
+    "price": "2499.00",
+    "image": "products/61RCobUrQFL._SY625_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T05:23:34.041Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "name": "Jeans",
+    "description": "Built for Action: Heavy-duty denim with reinforced seams for extra durability.\r\nVersatile Styling: Perfect for casual, streetwear, hip-hop, and rugged outdoor looks.\r\nAll-Day Comfort: Soft, breathable cotton-blend denim for non-stop wearability.\r\nVintage Meets Modern: Classic designs reimagined for today’s fashion.\r\nEasy Maintenance – Fade-resistant and machine washable.",
+    "price": "899.00",
+    "image": "products/61dFcpPdJkL._SY741_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T05:37:57.537Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "category": 4,
+    "name": "Eyewearlabs OKNO",
+    "description": "POLARIZED LENSES – Eyewearlabs sunglasses are polarized and UV Protected. Polarized lenses can filter out sunlight reflected glare, and protect your eyes from long-term damage by blocking 100% of harmful UV rays. These lenses are Anti-Glare / Anti-Reflective and Crack Resistant, and are dust repellent.\r\nFrame Material: Hexagonal Material l Flexible Light - Weight | Frame Size: Medium\r\nDESIGN - Balancing classic and trendy. Ideal for men. Since they are very light weight, you will not feel heavy or uncomfortable. Product color might slightly vary due to photographic lighting.\r\nPERFECT ALL ROUNDER – These Eyewearlabs sunglasses are the perfect choice for Daily wear, Outdoor sports and activities such as Travelling, Bike and car Drives, Cricket, Shopping and even taking selfies. They are suitable as a high fashion accessory that adds up to your style.\r\nCare Instructions - It is important to clean and maintain them regularly. Just wipe them with a microfiber cloth to keep your lenses pristine and smudge-free.",
+    "price": "799.00",
+    "image": "products/515RULK4n1L._SX679_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T05:45:43.637Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "name": "London Hills  Round Neck Cotton  Fit T-Shirts",
+    "description": "Premium Cotton Blend Fabric: Crafted from soft, breathable, and durable cotton blend material that feels gentle on skin and keeps you comfortable all day long.\r\nClassic Crew Neck Design: Timeless round-neck pattern with reinforced ribbed collar for a clean, modern look that suits every casual outfit.\r\nPerfect Everyday Fit: Tailored for regular fit — not too tight, not too loose — offering easy movement and a flattering silhouette for all body types.\r\nVersatile Style: Ideal for pairing with jeans, joggers, or shorts; perfect for gym, travel, weekend outings, or daily wear.\r\nColor & Care: Solid color that resists fading even after multiple washes. Machine washable; do not bleach; dry in shade.",
+    "price": "999.00",
+    "image": "products/61v-HyIcV0L._SY879_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T05:48:01.888Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 11,
+  "fields": {
+    "category": 2,
+    "name": "Apple 2024 Macbook",
+    "description": "SUPERCHARGED BY M4 PRO OR M4 MAX — The 14″ MacBook Pro with the M4 Pro or M4 Max chip gives you outrageous performance in a powerhouse laptop built for Apple Intelligence. With all-day battery life and a breathtaking Liquid Retina XDR display with up to 1,600 nits peak brightness, it’s pro in every way.\r\nCHAMPION CHIPS — The M4 Pro chip blazes through demanding tasks like compiling millions of lines of code. M4 Max can handle the most challenging workflows, like rendering intricate 3D content.\r\nBUILT FOR APPLE INTELLIGENCE — Apple Intelligence is the personal intelligence system that helps you write, express yourself and get things done effortlessly. With groundbreaking privacy protections, it gives you peace of mind that no one else can access your data — not even Apple.\r\nALL-DAY BATTERY LIFE — MacBook Pro delivers the same exceptional performance whether it’s running on battery or plugged in.\r\nAPPS FLY WITH APPLE SILICON — All your favourites, including Microsoft 365 and Adobe Creative Cloud, run lightning fast in macOS.",
+    "price": "199000.00",
+    "image": "products/61SiQmF5NL._SX679_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T09:49:24.338Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 12,
+  "fields": {
+    "category": 2,
+    "name": "Apple Watch Ultra",
+    "description": "RUGGED AND READY TO GO — The ultimate sports and adventure watch is built to last with an extremely tough titanium case and a strong sapphire crystal display. Water resistant 100 m — great for swimming, diving and high-speed water sports.\r\nBRIGHT, BEAUTIFUL DISPLAY — A large and advanced display that emits more light at wider angles — making it even brighter and easier to read. You can also use the display as a flashlight.\r\nMULTIDAY BATTERY LIFE — Up to 42 hours of normal use and up to 72 hours in Low Power Mode. Track a workout with full GPS and heart rate monitoring for up to 20 hours in Low Power Mode.\r\nULTIMATE RUNNING AND WORKOUT COMPANION — Precision dual-frequency GPS, Pacer, Heart Rate Zones, Custom Workouts, running power, Workout Buddy powered by Apple Intelligence from your nearby iPhone and training load give runners, swimmers, cyclists and athletes everything they need.\r\nSAFETY FEATURES — Ultra 3 can detect a hard fall or severe car crash, automatically help connect you with emergency services and notify your emergency contacts. Check In can automatically notify a loved one when you’ve arrived at your destination.",
+    "price": "102000.00",
+    "image": "products/81UVCW0LijL._SX679_.jpg",
+    "available": true,
+    "created_at": "2026-01-15T09:50:56.736Z"
+  }
+}
+]
