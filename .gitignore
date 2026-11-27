@@ -13,7 +13,9 @@ env/
 # Django
 *.log
 db.sqlite3
-media/
+media/*
+!media/products/
+!media/products/**
 
 # Environment variables and secrets
 .env
