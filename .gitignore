@@ -1,5 +1,6 @@
 
 # Python
+staticfiles/
 __pycache__/
 *.py[cod]
 *.pyo
