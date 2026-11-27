@@ -1,0 +1,48 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<style>
+.cart-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+</style>
+
+
+<h2>Your Cart</h2>
+
+<table class="table">
+<tr>
+    <th>Product</th>
+    <th>Qty</th>
+    <th>Price</th>
+    <th>Subtotal</th>
+    <th></th>
+</tr>
+
+{% for item in items %}
+<tr>
+    <td>{{ item.product.name }}</td>
+    <td>
+        <form method="post" action="{% url 'update_cart' item.product.id %}">
+            {% csrf_token %}
+            <input type="number" name="quantity" value="{{ item.qty }}" min="1">
+            <button class="btn btn-sm btn-primary">Update</button>
+        </form>
+    </td>
+    <td>₹{{ item.product.price }}</td>
+    <td>₹{{ item.subtotal }}</td>
+    <td>
+        <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remove</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<h4>Total: ₹{{ total }}</h4>
+
+<a href="{% url 'checkout' %}" class="btn btn-success">Checkout</a>
+
+{% endblock %}

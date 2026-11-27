@@ -1,0 +1,65 @@
+
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+
+            <div class="card border-0 shadow p-4">
+
+                <h3 class="fw-bold mb-2">My Profile</h3>
+
+                <p class="text-muted mb-4">
+                    Update your personal and delivery information.
+                </p>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        {{ form.full_name }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        {{ form.phone }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Delivery Address</label>
+                        {{ form.address }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">City</label>
+                        {{ form.city }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Postal Code</label>
+                        {{ form.postal_code }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary px-4">
+                        Save Profile
+                    </button>
+
+                    <a href="{% url 'customer_dashboard' %}"
+                       class="btn btn-secondary">
+                        Back
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

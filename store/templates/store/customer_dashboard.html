@@ -1,0 +1,184 @@
+
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="mb-4">
+        <h2 class="fw-bold">My Dashboard</h2>
+        <p class="text-white">
+            Welcome back, {{ request.user.username }}!
+            Manage your account and orders here.
+        </p>
+    </div>
+
+    <!-- Dashboard Boxes -->
+    <div class="row g-4 mb-5">
+
+        <!-- My Account -->
+        <div class="col-md-6">
+            <a href="{% url 'edit_profile' %}"
+               class="text-decoration-none">
+
+                <div class="card border-0 shadow-sm p-4 h-100 dashboard-card">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <div class="rounded-3 bg-primary text-white p-3 fs-3">
+                            👤
+                        </div>
+
+                        <div>
+                            <h4 class="fw-bold text-white mb-1">
+                                My Account
+                            </h4>
+
+                            <p class="text-white mb-0">
+                                View your account information
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4 text-primary fw-semibold">
+                        Manage Account →
+                    </div>
+
+                </div>
+            </a>
+        </div>
+
+        <!-- My Orders -->
+        <div class="col-md-6">
+            <a href="{% url 'my_orders' %}"
+               class="text-decoration-none">
+
+                <div class="card border-0 shadow-sm p-4 h-100 dashboard-card">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <div class="rounded-3 bg-warning text-dark p-3 fs-3">
+                            📦
+                        </div>
+
+                        <div>
+                            <h4 class="fw-bold text-white mb-1">
+                                My Orders
+                            </h4>
+
+                            <p class="text-white mb-0">
+                                View and track your purchases
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4 text-primary fw-semibold">
+                        View Orders →
+                    </div>
+
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm p-4">
+                <p class="text-white mb-2">Total Orders</p>
+                <h2 class="fw-bold">{{ total_orders }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm p-4">
+                <p class="text-white mb-2">Total Spent</p>
+                <h2 class="fw-bold">₹{{ total_spent }}</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Recent Orders -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="fw-bold mb-0">Recent Orders</h4>
+
+        <a href="{% url 'my_orders' %}"
+           class="btn btn-dark btn-sm">
+            View All
+        </a>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle mb-0">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for order in recent_orders %}
+                    <tr>
+                        <td>#{{ order.id }}</td>
+
+                        <td>
+                            {{ order.created_at|date:"d M Y" }}
+                        </td>
+
+                        <td>₹{{ order.total_amount }}</td>
+
+                        <td>
+                            {{ order.get_order_status_display }}
+                        </td>
+
+                        <td>
+                            <a href="{% url 'order_detail' order.id %}"
+                               class="btn btn-primary btn-sm">
+                                Details
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center py-4">
+                            No orders yet. Start shopping!
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+.dashboard-card {
+    border-radius: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+}
+</style>
+
+{% endblock %}

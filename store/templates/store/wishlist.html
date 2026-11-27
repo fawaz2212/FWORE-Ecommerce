@@ -1,0 +1,80 @@
+
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<style>
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.wishlist-card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.wishlist-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.dark-mode .wishlist-card {
+    background: #1e1e1e;
+    color: white;
+}
+</style>
+
+<h2 class="mb-4">❤️ My Wishlist</h2>
+
+<div class="wishlist-grid">
+
+{% for product in products %}
+
+<div class="wishlist-card">
+
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+    <h5 class="mt-3">{{ product.name }}</h5>
+
+    <h5 class="text-success">₹{{ product.price }}</h5>
+
+    <a href="{% url 'product_detail' product.id %}"
+       class="btn btn-primary btn-sm">
+        View Product
+    </a>
+
+    <form method="POST"
+          action="{% url 'toggle_wishlist' product.id %}"
+          class="mt-2">
+        {% csrf_token %}
+
+        <button class="btn btn-outline-danger btn-sm">
+            Remove ❤️
+        </button>
+    </form>
+
+</div>
+
+{% empty %}
+
+<div class="text-center p-5">
+    <h4>Your wishlist is empty ❤️</h4>
+    <p>Explore products and save your favourites.</p>
+
+    <a href="{% url 'product_list' %}"
+       class="btn btn-primary">
+        Shop Now
+    </a>
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
