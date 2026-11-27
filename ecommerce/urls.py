@@ -28,9 +28,12 @@ urlpatterns = [
 
     # Serve committed product images on Render Free
     re_path(
-        r'^media/(?P<path>.*)$',
-        serve,
-        {'document_root': settings.MEDIA_ROOT}
-    ),
+    r'^media/(?P<path>.*)$',
+    serve,
+    {
+        'document_root': settings.MEDIA_ROOT,
+        'insecure': True,
+    }
+),
 ]
 
