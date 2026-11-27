@@ -1,20 +1,90 @@
+
 {% extends 'store/base.html' %}
+
 {% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0 p-4">
 
-<div class="card p-4 mx-auto" style="max-width: 500px;">
-    <h3 class="text-center mb-3">Checkout</h3>
+                <h3 class="fw-bold mb-2">Complete Your Delivery Details</h3>
+                <p class="text-muted">Please provide accurate information for delivery.</p>
 
-    <p class="text-center">
-        Click below to proceed with secure payment
-    </p>
+                <form method="POST" action="{% url 'create_checkout_session' %}">
+                    {% csrf_token %}
 
-    <!-- ✅ ONLY ONE FORM -->
-    <form method="post" action="{% url 'create_checkout_session' %}">
-        {% csrf_token %}
-        <button class="btn btn-primary w-100">
-            Pay with Stripe
-        </button>
-    </form>
+                    <h5 class="fw-bold mb-3">Customer Information</h5>
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" name="full_name" class="form-control"
+                               value="{{ profile.full_name|default:'' }}" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" name="email" class="form-control"
+                                   value="{{ user.email|default:'' }}" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" name="phone" class="form-control"
+                                   value="{{ profile.phone|default:'' }}" required>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h5 class="fw-bold mb-3">Delivery Address</h5>
+
+                    <div class="mb-3">
+                        <label class="form-label">Complete Delivery Address *</label>
+                        <textarea name="address" class="form-control" rows="4" required>{{ profile.address|default:'' }}</textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">City *</label>
+                            <input type="text" name="city" class="form-control"
+                                   value="{{ profile.city|default:'' }}" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">PIN Code *</label>
+                            <input type="text" name="postal_code" class="form-control"
+                                   value="{{ profile.postal_code|default:'' }}"
+                                   maxlength="6" minlength="6"
+                                   pattern="[0-9]{6}" inputmode="numeric" required>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h5 class="fw-bold mb-3">Order Summary</h5>
+
+                    {% for item in items %}
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>{{ item.product.name }} × {{ item.qty }}</span>
+                        <span>₹{{ item.subtotal }}</span>
+                    </div>
+                    {% endfor %}
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between mb-4">
+                        <h5>Total Amount</h5>
+                        <h5 class="fw-bold text-success">₹{{ total }}</h5>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-3">
+                        Pay ₹{{ total }} with Stripe
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-
 {% endblock %}
