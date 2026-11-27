@@ -403,26 +403,7 @@ def register(request):
     return render(request, 'store/register.html', {'form': form})
 
 
-def create_checkout_session(request):
-    import stripe
-    from django.conf import settings
 
-    stripe.api_key = settings.STRIPE_SECRET_KEY  # 👈 FORCE SET HERE
-
-    session = stripe.checkout.Session.create(
-        mode='payment',
-        line_items=[{
-            'price_data': {
-                'currency': 'inr',
-                'product_data': {'name': 'Order Payment'},
-                'unit_amount': 50000,
-            },
-            'quantity': 1,
-        }],
-        success_url='http://127.0.0.1:8000/success/',
-        cancel_url='http://127.0.0.1:8000/cancel/',
-    )
-    return redirect(session.url)
 
 def payment_success(request):
     return render(request, 'store/success.html')
