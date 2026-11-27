@@ -287,10 +287,10 @@ def create_checkout_session(request):
             'user_id': str(request.user.id),
         },
         success_url=(
-            request.build_absolute_uri('/payment-success/')
-            + '?session_id={CHECKOUT_SESSION_ID}'
-        ),
-        cancel_url=request.build_absolute_uri('/payment-cancel/'),
+    request.build_absolute_uri('/success/')
+    + '?session_id={CHECKOUT_SESSION_ID}'
+),
+cancel_url=request.build_absolute_uri('/cancel/'),
     )
 
     # Store the order snapshot against this Stripe session
