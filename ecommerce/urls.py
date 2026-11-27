@@ -16,19 +16,30 @@ Including another URLconf
 """
 
 
+
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
-from django.views.static import serve
+from django.http import FileResponse, Http404
+from django.utils._os import safe_join
+from pathlib import Path
+
+
+def product_media(request, path):
+    try:
+        file_path = Path(safe_join(str(settings.MEDIA_ROOT), path))
+
+        if not file_path.is_file():
+            raise Http404("Image not found")
+
+        return FileResponse(open(file_path, "rb"))
+    except (ValueError, OSError):
+        raise Http404("Image not found")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('store.urls')),
-
-    # Serve product images on Render Free
-    re_path(
-        r'^media/(?P<path>.*)$',
-        serve,
-        {'document_root': settings.MEDIA_ROOT},
-    ),
+    re_path(r'^media/(?P<path>.*)$', product_media),
 ]
+
