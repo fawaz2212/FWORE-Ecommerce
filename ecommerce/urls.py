@@ -41,5 +41,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('store.urls')),
     re_path(r'^media/(?P<path>.*)$', product_media),
+    path('api/', include('api.urls')),
 ]
 
